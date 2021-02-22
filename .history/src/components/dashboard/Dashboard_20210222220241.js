@@ -32,8 +32,8 @@ Dashboard.propTypes = {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-    projects: state.firestore.ordered.projects,
-    // projects: state.project.projects,
+    // projects: state.firestore.ordered.projects,
+    projects: state.project.projects,
   };
 };
 
