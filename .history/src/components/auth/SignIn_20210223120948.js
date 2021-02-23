@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-undef */
 /* eslint-disable react/state-in-constructor */
@@ -28,8 +26,6 @@ class SignIn extends Component {
   };
 
   render() {
-    const { authError } = this.props;
-
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">
@@ -44,9 +40,6 @@ class SignIn extends Component {
           </div>
           <div className="input-field">
             <button className="btn pink lighten-1 z-depth-0">Login</button>
-            <div className="red-text center">
-              {authError ? <p>{authError}</p> : null}
-            </div>
           </div>
         </form>
       </div>
@@ -54,12 +47,8 @@ class SignIn extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  authError: state.auth.authError,
-});
-
 const mapDispatchToProps = (dispatch) => ({
   signIn: (creds) => dispatch(signIn(creds)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
+export default connect(null, mapDispatchToProps)(SignIn);

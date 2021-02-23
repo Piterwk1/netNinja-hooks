@@ -12,7 +12,6 @@ import firebase from 'firebase/app';
 import App from './App';
 import rootReducer from './store/reducers/rootReducer';
 // import firebase from './config/fbConfig';
-import fbConfig from './config/fbConfig';
 
 // import reportWebVitals from './reportWebVitals';
 

@@ -1,12 +1,9 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-undef */
 /* eslint-disable react/state-in-constructor */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { signIn } from '../../store/actions/authActions';
 
 class SignIn extends Component {
   state = {
@@ -23,13 +20,10 @@ class SignIn extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    // console.log(this.state);
-    this.props.signIn(this.state);
+    console.log(this.state);
   };
 
   render() {
-    const { authError } = this.props;
-
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">
@@ -44,9 +38,6 @@ class SignIn extends Component {
           </div>
           <div className="input-field">
             <button className="btn pink lighten-1 z-depth-0">Login</button>
-            <div className="red-text center">
-              {authError ? <p>{authError}</p> : null}
-            </div>
           </div>
         </form>
       </div>
@@ -54,12 +45,4 @@ class SignIn extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  authError: state.auth.authError,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  signIn: (creds) => dispatch(signIn(creds)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(SignIn);
+export default connect(SignIn);

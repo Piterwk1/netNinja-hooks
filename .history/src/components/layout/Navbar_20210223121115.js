@@ -16,9 +16,7 @@ const Navbar = () => (
   </nav>
 );
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return {};
-};
-
+const mapStateToProps = (state) =>
+  // console.log(state);
+  ({});
 export default connect(mapStateToProps)(Navbar);

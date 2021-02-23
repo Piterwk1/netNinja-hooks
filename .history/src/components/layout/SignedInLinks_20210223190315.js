@@ -9,9 +9,7 @@ const SignedInLinks = (props) => (
       <NavLink to="/create">New Project</NavLink>
     </li>
     <li>
-      <a onClick={props.signOut} to="/create">
-        Log Out
-      </a>
+      <NavLink to="/">Log Out</NavLink>
     </li>
     <li>
       <NavLink to="/" className="btn btn-floating pink lighten-1">
@@ -26,5 +24,3 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(null, mapDispatchToProps)(SignedInLinks);
-
-// export default SignedInLinks;

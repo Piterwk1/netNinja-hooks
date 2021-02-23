@@ -21,4 +21,4 @@ const mapStateToProps = (state) => {
   return {};
 };
 
-export default connect(mapStateToProps)(Navbar);
+export default connect(Navbar);
