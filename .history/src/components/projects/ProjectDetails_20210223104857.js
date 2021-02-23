@@ -6,7 +6,7 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 
 const ProjectDetails = (props) => {
-  // console.log(props);
+  console.log(props);
   // eslint-disable-next-line react/prop-types
   // const { id } = props.match.params;
   const { project } = props;

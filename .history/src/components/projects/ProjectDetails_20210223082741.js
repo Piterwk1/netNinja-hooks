@@ -8,35 +8,30 @@ import { compose } from 'redux';
 const ProjectDetails = (props) => {
   // console.log(props);
   // eslint-disable-next-line react/prop-types
-  // const { id } = props.match.params;
-  const { project } = props;
-  if (project) {
-    return (
-      <div className="container section project-details">
-        <div className="card z-depth-0">
-          <div className="card-content">
-            <span className="card-title">{project.title}</span>
-            <p>{project.content}</p>
-            <div className="card-action grey lighten-4 grey-text">
-              <div>
-                Posted by {project.authorFirstName} {project.authorLastName}
-              </div>
-              <div>19 February, 9am</div>
-            </div>
+  const { id } = props.match.params;
+  return (
+    <div className="container section project-details">
+      <div className="card z-depth-0">
+        <div className="card-content">
+          <span className="card-title">Project Title - {id}</span>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
+            suscipit quis nostrum nulla dignissimos eveniet dolor alias vitae
+            quibusdam, laudantium commodi sint ipsam, quos, sit consequatur
+            impedit explicabo cum dicta?
+          </p>
+          <div className="card-action grey lighten-4 grey-text">
+            <div>Posted by Piotr K</div>
+            <div>19 February, 9am</div>
           </div>
         </div>
       </div>
-    );
-  }
-  return (
-    <div className="container center">
-      <p>Loading project...</p>
     </div>
   );
 };
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log(state);
+  console.log(state);
   const { id } = ownProps.match.params;
   const { projects } = state.firestore.data;
   const project = projects ? projects[id] : null;

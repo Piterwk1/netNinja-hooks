@@ -8,7 +8,7 @@ import Notifications from './Notifications';
 
 class Dashboard extends Component {
   render() {
-    // console.log(this.props);
+    console.log(this.props);
     const { projects } = this.props;
     return (
       <div className="dashboard container">

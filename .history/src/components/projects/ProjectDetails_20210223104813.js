@@ -6,7 +6,7 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 
 const ProjectDetails = (props) => {
-  // console.log(props);
+  console.log(props);
   // eslint-disable-next-line react/prop-types
   // const { id } = props.match.params;
   const { project } = props;
@@ -19,7 +19,7 @@ const ProjectDetails = (props) => {
             <p>{project.content}</p>
             <div className="card-action grey lighten-4 grey-text">
               <div>
-                Posted by {project.authorFirstName} {project.authorLastName}
+                Posted by {project.authorFirstName} {project.authorLasttName}
               </div>
               <div>19 February, 9am</div>
             </div>
@@ -36,7 +36,7 @@ const ProjectDetails = (props) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log(state);
+  console.log(state);
   const { id } = ownProps.match.params;
   const { projects } = state.firestore.data;
   const project = projects ? projects[id] : null;
