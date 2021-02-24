@@ -4,14 +4,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import { applyMiddleware, compose, createStore } from 'redux';
 
-import { Provider, useSelector } from 'react-redux';
+import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createFirestoreInstance, reduxFirestore } from 'redux-firestore';
-import {
-  getFirebase,
-  isLoaded,
-  ReactReduxFirebaseProvider,
-} from 'react-redux-firebase';
+import { getFirebase, ReactReduxFirebaseProvider } from 'react-redux-firebase';
 import firebase from 'firebase/app';
 import App from './App';
 import rootReducer from './store/reducers/rootReducer';
@@ -44,9 +40,7 @@ function AuthIsLoaded({ children }) {
 ReactDOM.render(
   <Provider store={store}>
     <ReactReduxFirebaseProvider {...rffProps}>
-      <AuthIsLoaded>
-        <App />
-      </AuthIsLoaded>
+      <App />
     </ReactReduxFirebaseProvider>
   </Provider>,
   document.getElementById('root')
