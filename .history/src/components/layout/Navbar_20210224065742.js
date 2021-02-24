@@ -14,7 +14,8 @@ const Navbar = (props) => {
         <Link to="/" className="brand-logo">
           MarioPlan
         </Link>
-        {links}
+        <SignedInLinks />
+        <SignedOutLinks />
       </div>
     </nav>
   );
