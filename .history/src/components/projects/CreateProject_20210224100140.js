@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-undef */
@@ -7,7 +6,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Redirect } from 'react-router-dom';
 import { createProject } from '../../store/actions/projectActions';
 
 class CreateProject extends Component {
@@ -30,7 +28,6 @@ class CreateProject extends Component {
 
   render() {
     const { auth } = this.props;
-    if (!auth.uid) return <Redirect to="/signin" />;
     return (
       <div className="container">
         <form onSubmit={this.handleSubmit} className="white">

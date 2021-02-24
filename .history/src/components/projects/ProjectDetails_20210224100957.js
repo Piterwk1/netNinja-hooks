@@ -1,10 +1,8 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable react/destructuring-assignment */
 
 import React from 'react';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
-import { Redirect } from 'react-router-dom';
 import { compose } from 'redux';
 
 const ProjectDetails = (props) => {
@@ -40,12 +38,12 @@ const ProjectDetails = (props) => {
 };
 
 const mapStateToProps = (state, ownProps) => {
+  // console.log(state);
   const { id } = ownProps.match.params;
   const { projects } = state.firestore.data;
   const project = projects ? projects[id] : null;
   return {
     project,
-    auth: state.firebase.auth,
   };
 };
 
