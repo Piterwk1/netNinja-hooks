@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -7,12 +6,8 @@ import SignedInLinks from './SignedInLinks';
 import SignedOutLinks from './SignedOutLinks';
 
 const Navbar = (props) => {
-  const { auth, profile } = props;
-  const links = auth.uid ? (
-    <SignedInLinks profile={profile} />
-  ) : (
-    <SignedOutLinks />
-  );
+  const { auth } = props;
+  const links = auth.uid ? <SignedInLinks /> : <SignedOutLinks />;
   return (
     <nav className="nav-wrapper grey darken-3">
       <div className="container">
@@ -29,12 +24,9 @@ Navbar.propTypes = {
   auth: PropTypes.object,
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state) => ({
   console.log(state);
-  return {
-    auth: state.firebase.auth,
-    profile: state.firebase.profile,
-  };
-};
+  auth: state.firebase.auth,
+});
 
 export default connect(mapStateToProps)(Navbar);
