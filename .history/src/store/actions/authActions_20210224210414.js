@@ -27,14 +27,12 @@ export const signOut = () => (dispatch, getState, { getFirebase }) => {
     });
 };
 
-export const signUp = (newUser) => (
-  dispatch,
-  getState,
-  { getFirebase, getFireStore }
-) => {
+export const signUp = (newUser) => (dispatch, getState, { getFirebase }) => {
+  getFirebase, getFireStore;
+};
+{
   const firebase = getFirebase();
-  const firestore = getFirebase().firestore();
-  // const firestore = getFireStore();
+  const firestore = getFireStore();
 
   firebase
     .auth()
@@ -55,4 +53,4 @@ export const signUp = (newUser) => (
     .catch((err) => {
       dispatch({ type: 'SIGNUP_ERROR', err });
     });
-};
+}

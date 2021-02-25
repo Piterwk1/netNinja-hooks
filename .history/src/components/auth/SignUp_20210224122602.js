@@ -1,5 +1,3 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/button-has-type */
 /* eslint-disable no-undef */
 /* eslint-disable react/state-in-constructor */
@@ -31,7 +29,7 @@ class SignUp extends Component {
   };
 
   render() {
-    const { auth, authError } = this.props;
+    const { auth } = this.props;
     if (auth.uid) return <Redirect to="/" />;
     return (
       <div className="container">
@@ -55,9 +53,6 @@ class SignUp extends Component {
           </div>
           <div className="input-field">
             <button className="btn pink lighten-1 z-depth-0">Sign up</button>
-            <div className="red-text center">
-              {authError ? <p>{authError}</p> : null}
-            </div>
           </div>
         </form>
       </div>
@@ -67,7 +62,6 @@ class SignUp extends Component {
 
 const mapStateToProps = (state) => ({
   auth: state.firebase.auth,
-  authError: state.auth.authError,
 });
 
 const mapDispatchToProps = (dispatch) => ({

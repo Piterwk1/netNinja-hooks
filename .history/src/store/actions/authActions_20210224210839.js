@@ -33,8 +33,7 @@ export const signUp = (newUser) => (
   { getFirebase, getFireStore }
 ) => {
   const firebase = getFirebase();
-  const firestore = getFirebase().firestore();
-  // const firestore = getFireStore();
+  const firestore = getFireStore();
 
   firebase
     .auth()
