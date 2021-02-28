@@ -1,5 +1,5 @@
 /* eslint-disable react/destructuring-assignment */
-import React from 'react';
+import React, { Component } from 'react';
 import SongList from './components/SongList';
 
 const App = () => (
