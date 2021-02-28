@@ -20,7 +20,7 @@ const SongList = () => {
           <li key={song.id}>{song.title}</li>
         ))}
       </ul>
-      <NewSongForm addSong={addSong} />
+      <NewSongForm />
     </div>
   );
 };
